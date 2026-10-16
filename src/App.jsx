@@ -423,7 +423,7 @@ function App() {
                 <div className="avatar-ring">
                   <img
                     className="avatar-placeholder"
-                    src="/profile.jpg"
+                    src={`${import.meta.env.BASE_URL}profile.jpg`}
                     alt={`${profile.name} profile portrait`}
                     style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "inherit", display: "block" }}
                   />
