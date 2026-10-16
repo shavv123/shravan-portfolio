@@ -1850,3 +1850,75 @@ a:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* Dark Premium polish */
+:root {
+  --accent: #a78bfa;
+  --accent-2: #55e6d0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+.site-header {
+  border-bottom-color: rgba(167, 139, 250, 0.16);
+}
+
+.skill-card,
+.project-card,
+.timeline-card,
+.certificate-card,
+.stat-card,
+.about-main-card {
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.skill-card:hover,
+.project-card:hover,
+.timeline-card:hover,
+.about-main-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(167, 139, 250, 0.38);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.18);
+}
+
+.project-card,
+.timeline-card,
+.certificate-card,
+.skill-card,
+.stat-card,
+.about-main-card {
+  border: 1px solid var(--line);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (hover: none) {
+  .skill-card:hover,
+  .project-card:hover,
+  .timeline-card:hover,
+  .about-main-card:hover {
+    transform: none;
+  }
+}

@@ -211,11 +211,11 @@ const education = [
   },
   {
     title: "BCA",
-    subtitle: "Currently Completing 2026 ",
+    subtitle: "Current study status to be confirmed",
     date: "2026",
-    detail: "Current study status / year: 2026",
-    marks: "7.3 CGPA",
-    status: "RECENTLY COMPLETED",
+    detail: "Bachelor of Computer Applications,
+    marks: "Not provided",
+    status: "IN PROGRESS",
   },
 ];
 
@@ -357,11 +357,9 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15 }}
             >
-              I'm <span className="gradient-text">{profile.name}</span>
-              <br />
-              building the <span className="outline-text">next</span>
-              <br />
-              digital thing.
+             bringing <span className="outline-text">data</span>
+<br />
+and          ideas to life.
             </motion.h1>
 
             <div className="role-line" aria-live="polite">
