@@ -213,7 +213,7 @@ const education = [
     title: "BCA",
     subtitle: "Current study status to be confirmed",
     date: "2026",
-    detail: "Bachelor of Computer Applications,
+    detail: "Bachelor of Computer Applications",
     marks: "Not provided",
     status: "IN PROGRESS",
   },
