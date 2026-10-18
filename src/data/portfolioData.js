@@ -184,6 +184,15 @@ export const certificates = [
 
      image: "/certificates/certificate-1.png",
   },
+  {
+    title: "WordPress",
+    organization: "WordPress Academy",
+    year: "2025",
+    description:
+      "WordPress course completion certificate.",
+    // Agar WordPress certificate ki actual image hai,
+    // to uska correct public path yahan add karo.
+  },
 
   {
   title: "Sales Performance Analysis Dashboard",
