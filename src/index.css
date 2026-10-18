@@ -1922,3 +1922,209 @@ a:focus-visible {
     transform: none;
   }
 }
+
+/* Professional Project Card Improvements */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--surface-solid);
+}
+
+.project-art {
+  background-color: var(--bg-soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-art img {
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.project-art a:focus-visible {
+  outline-offset: -3px;
+}
+
+.project-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.project-content > p {
+  line-height: 1.8;
+}
+
+.project-card:hover .project-art img {
+  transform: scale(1.025);
+}
+
+.project-filters .filter-button {
+  min-height: 36px;
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .project-art {
+    height: 220px;
+  }
+
+  .project-card-top {
+    padding-inline: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-art img {
+    transition: none;
+  }
+
+  .project-card:hover .project-art img {
+    transform: none;
+  }
+}
+
+
+/* Animated developer visual */
+.developer-core {
+  position: absolute;
+  z-index: 0;
+  width: min(320px, 78%);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 32px;
+  background: linear-gradient(
+    145deg,
+    rgba(25, 23, 48, 0.8),
+    rgba(10, 18, 30, 0.55)
+  );
+  box-shadow: 0 0 70px rgba(139, 92, 246, 0.12);
+  pointer-events: none;
+}
+
+.core-grid {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image:
+    linear-gradient(rgba(167, 139, 250, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(167, 139, 250, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+.core-code {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  color: #e4e0ff;
+  font: 500 clamp(11px, 2vw, 14px)/2
+    "DM Mono", monospace;
+}
+
+.core-code span {
+  color: #c4a7ff;
+}
+
+.core-code b {
+  color: #55e6d0;
+  font-weight: 500;
+}
+
+.core-orb {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 0 0 24px currentColor;
+}
+
+.orb-purple {
+  top: 18%;
+  right: 17%;
+  color: #a78bfa;
+  background: currentColor;
+}
+
+.orb-cyan {
+  bottom: 18%;
+  left: 15%;
+  color: #55e6d0;
+  background: currentColor;
+}
+
+/* Keep the existing profile card above the visual */
+.profile-card {
+  z-index: 2;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding-top: 42px;
+    padding-bottom: 90px;
+  }
+
+  .hero-visual {
+    min-height: 350px;
+    margin-top: 4px;
+  }
+
+  .visual-orbit {
+    width: min(340px, 90vw);
+    height: min(340px, 90vw);
+  }
+
+  .orbit-two {
+    width: min(290px, 78vw);
+    height: min(290px, 78vw);
+  }
+
+  .profile-card {
+    width: min(280px, 80%);
+  }
+
+  .avatar-ring {
+    width: 160px;
+    height: 160px;
+  }
+
+  .floating-note {
+    min-width: 140px;
+    padding: 9px;
+  }
+
+  .note-top {
+    top: 25px;
+    right: 0;
+  }
+
+  .note-bottom {
+    bottom: 24px;
+    left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .core-orb {
+    box-shadow: none;
+  }
+}
