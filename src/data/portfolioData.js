@@ -182,7 +182,7 @@ export const certificates = [
 
     year: "2026",
 
-    image: "/certificates/certificate-1.jpg",
+     image: "/certificates/certificate-1.png",
   },
 
   {
