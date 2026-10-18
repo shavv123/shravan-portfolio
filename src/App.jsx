@@ -245,11 +245,19 @@ const education = [
 
 const certificates = [
   {
-    title: "WordPress ",
+    title: "WordPress",
     issuer: "WordPress Academy",
     date: "2025",
     description:
       "This certificate verifies the completion of a WordPress course, demonstrating proficiency in website development using the WordPress platform.",
+    image: "", // Add the real WordPress certificate image path when available.
+  },
+  {
+    title: "Python",
+    issuer: "Simplilearn",
+    date: "2026",
+    description: "Python course certificate.",
+    image: `${import.meta.env.BASE_URL}certificates/certificate-1.png`,
   },
 ];
 
@@ -761,8 +769,25 @@ and          ideas to life.
                 <article className="certificate-card">
                   <div className="certificate-top">
                     <div className="certificate-icon"><Award size={26} /></div>
-                    <span className="certificate-draft">ADD DETAILS</span>
+                    <span className="certificate-draft">{certificate.image ? "VIEW CERTIFICATE" : "ADD DETAILS"}</span>
                   </div>
+                  {certificate.image && (
+                    <a
+                      href={certificate.image}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`View ${certificate.title} certificate image`}
+                      className="certificate-image-link"
+                      style={{ display: "block", margin: "18px 0", overflow: "hidden", borderRadius: "12px", background: "rgba(255,255,255,0.03)" }}
+                    >
+                      <img
+                        src={certificate.image}
+                        alt={`${certificate.title} certificate`}
+                        loading="lazy"
+                        style={{ display: "block", width: "100%", maxHeight: "280px", objectFit: "contain", borderRadius: "12px" }}
+                      />
+                    </a>
+                  )}
                   <h3>{certificate.title}</h3>
                   <p className="certificate-issuer">{certificate.issuer} · {certificate.date}</p>
                   <p>{certificate.description}</p>
