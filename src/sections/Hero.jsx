@@ -135,17 +135,17 @@ function Hero() {
               </a>
 
               <a
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/in/shavv123/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn profile — replace with your profile URL"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white/60 transition hover:-translate-y-0.5 hover:border-violet-400/50 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-300"
+                aria-label="LinkedIn profile"
+                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white/60 transition hover:-translate-y-0.5 hover:border-violet-400/50 hover:text-white"
               >
                 <Linkedin size={18} />
               </a>
 
               <a
-                href="mailto:your-email@gmail.com"
+                href="mailto:shravanjuiya0@gmail.com"
                 aria-label="Send me an email"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white/60 transition hover:-translate-y-0.5 hover:border-cyan-400/50 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300"
               >
