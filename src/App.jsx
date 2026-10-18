@@ -147,10 +147,14 @@ const projects = [
     title: "RAKSHA AI",
     category: "AI & SAFETY",
     description:
-      "This repository appeared in your GitHub screenshot, but I could not verify public repository contents. The link is included for now; confirm that it is public and accessible before publishing.",
-    tags: ["AI", "Project", "Repository details pending"],
+      "A women’s safety and emergency support interface featuring account sign-up/login, an SOS screen, live-location access, emergency contacts, fake-call support, and voice SOS.",
+    tags: ["Women Safety", "SOS", "Live Location", "Emergency Contacts"],
     icon: Sparkles,
     color: "pink",
+    images: [
+      { src: `${import.meta.env.BASE_URL}projects/raksha-dashboard.png`, alt: "RAKSHA AI safety dashboard with SOS and emergency options" },
+      { src: `${import.meta.env.BASE_URL}projects/raksha-login.png`, alt: "RAKSHA AI sign-up and login screen" },
+    ],
     github: "https://github.com/shavv123/RAKSHA-AI",
     demo: "",
   },
@@ -188,6 +192,25 @@ const projects = [
     icon: Code2,
     color: "pink",
     github: "https://github.com/shavv123/Enterprise_FullStack_Project",
+    demo: "",
+  },
+  {
+    number: "10",
+    title: "Sales Performance Analysis Dashboard",
+    category: "DASHBOARD",
+    description:
+      "An Excel-based sales analytics project using fictional sales transactions. Explore revenue, profit, quantity sold, profit margin, regional performance, category-wise profit, and monthly trends.",
+    tags: [
+      "Microsoft Excel",
+      "PivotTables",
+      "PivotCharts",
+      "KPI Dashboard",
+    ],
+    icon: Database,
+    color: "cyan",
+    image: `${import.meta.env.BASE_URL}projects/Dashboard_Screenshot.png`,
+    github: "https://github.com/shavv123/sales-performance-analysis",
+    excel: `${import.meta.env.BASE_URL}projects/Sales_Performance_Analysis.xlsx`,
     demo: "",
   },
 ];
@@ -386,6 +409,21 @@ and          ideas to life.
               <a className="button button-secondary" href="#contact">
                 Get in touch <Mail size={17} />
               </a>
+              <a
+                className="button button-secondary"
+                href={`${import.meta.env.BASE_URL}resumes.pdf`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Resume <ArrowUpRight size={17} />
+              </a>
+              <a
+                className="button button-secondary"
+                href={`${import.meta.env.BASE_URL}resumes.pdf`}
+                download="Shravan-Resume.pdf"
+              >
+                Download CV <Download size={17} />
+              </a>
             </div>
 
             <div className="hero-socials">
@@ -573,17 +611,52 @@ and          ideas to life.
                       <span className="project-category">{project.category}</span>
                     </div>
                     <div className="project-art">
-                      <div className="art-grid" />
-                      <div className="art-circle" />
-                      <div className="art-window">
-                        <div className="art-window-top"><i /><i /><i /></div>
-                        <div className="art-code-line long" />
-                        <div className="art-code-line medium" />
-                        <div className="art-code-line short" />
-                        <div className="art-code-line long faded" />
-                        <Icon size={43} className="art-icon" />
-                      </div>
-                      <span className="art-spark"><Sparkles size={18} /></span>
+                      {project.images ? (
+                        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "8px", width: "100%", minHeight: "220px", padding: "10px", boxSizing: "border-box", position: "relative", zIndex: 2 }}>
+                          {project.images.map((image) => (
+                            <a key={image.src} href={image.src} target="_blank" rel="noreferrer" aria-label={`Open ${image.alt}`} style={{ display: "block", minWidth: 0, overflow: "hidden", borderRadius: "10px", background: "#111" }}>
+                              <img src={image.src} alt={image.alt} loading="lazy" style={{ display: "block", width: "100%", height: "100%", minHeight: "200px", objectFit: "contain" }} />
+                            </a>
+                          ))}
+                        </div>
+                      ) : project.image ? (
+                        <a
+                          href={project.image}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label={`Open ${project.title} dashboard image`}
+                          style={{ display: "block", width: "100%", height: "100%", position: "relative", zIndex: 2 }}
+                        >
+                          <img
+                            src={project.image}
+                            alt={`${project.title} preview`}
+                            loading="lazy"
+                            style={{
+                              display: "block",
+                              width: "100%",
+                              height: "100%",
+                              minHeight: "220px",
+                              objectFit: "contain",
+                              objectPosition: "center",
+                              borderRadius: "inherit",
+                            }}
+                          />
+                        </a>
+                      ) : (
+                        <>
+                          <div className="art-grid" />
+                          <div className="art-circle" />
+                          <div className="art-window">
+                            <div className="art-window-top"><i /><i /><i /></div>
+                            <div className="art-code-line long" />
+                            <div className="art-code-line medium" />
+                            <div className="art-code-line short" />
+                            <div className="art-code-line long faded" />
+                            <Icon size={43} className="art-icon" />
+                          </div>
+                          <span className="art-spark"><Sparkles size={18} /></span>
+                        </>
+                      )}
                     </div>
                     <div className="project-content">
                       <h3>{project.title}</h3>
@@ -599,7 +672,11 @@ and          ideas to life.
                         ) : (
                           <span className="link-placeholder"><Github size={16} /> Add GitHub URL</span>
                         )}
-                        {project.demo ? (
+                        {project.excel ? (
+                          <a href={project.excel} download>
+                            <Download size={15} /> Download Excel <ArrowUpRight size={14} />
+                          </a>
+                        ) : project.demo ? (
                           <a href={project.demo} target="_blank" rel="noreferrer">
                             Live demo <ArrowUpRight size={14} />
                           </a>
